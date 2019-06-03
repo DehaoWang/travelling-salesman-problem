@@ -7,9 +7,6 @@ all_edges = eval_all_edges_length(data)
 sequence = random.sample(range(0, len(data)), len(data))
 current_total_distance = total_length(sequence, all_edges)
 
-print(sequence)
-print(current_total_distance)
-
 for t in range(5000, -1, -1):
     print(f"T: {t}")
     for i in range(10000):
@@ -23,6 +20,8 @@ for t in range(5000, -1, -1):
             current_total_distance = new_total_distance
     print(f'Best Sequence So Far: {sequence}')
     print(f'Shortest Distance So Far: {current_total_distance}')
+    if t % 1000 is 0:
+        plot_graph(data, sequence)
 
 # T: 0
 # Best Sequence So Far:

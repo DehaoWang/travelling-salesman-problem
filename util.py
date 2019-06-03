@@ -15,10 +15,15 @@ def eval_all_edges_length(data):
     return all_edges
 
 
-def scatter_plot(data):
+def plot_graph(data, sequence):
     data_x = [_.x for _ in data]
     data_y = [_.y for _ in data]
     plt.scatter(data_x, data_y, c='#ff0000')
+    for i, num in enumerate(sequence):
+        if i is 0:
+            plt.plot([data[sequence[0]].x, data[sequence[-1]].x], [data[sequence[0]].y, data[sequence[-1]].y])
+        else:
+            plt.plot([data[num].x, data[sequence[i - 1]].x], [data[num].y, data[sequence[i - 1]].y])
     plt.show()
 
 
