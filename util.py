@@ -1,4 +1,5 @@
-import math
+import math, random, copy
+import matplotlib.pyplot as plt
 
 
 def dist(pos1, pos2):
@@ -12,3 +13,37 @@ def eval_all_edges_length(data):
         for j, second in enumerate(data):
             all_edges[i].append(dist(first, second))
     return all_edges
+
+
+def scatter_plot(data):
+    data_x = [_.x for _ in data]
+    data_y = [_.y for _ in data]
+    plt.scatter(data_x, data_y, c='#ff0000')
+    plt.show()
+
+
+def total_length(sequence, all_edges):
+    total = 0
+    for i, num in enumerate(sequence):
+        if i is 0:
+            total += all_edges[num][sequence[-1]]
+        else:
+            total += all_edges[num][sequence[i - 1]]
+    return total
+
+
+def permute_two_consecutive(sequence):
+    index = random.randint(0, len(sequence) - 1)
+    new_sequence = copy.deepcopy(sequence)
+    if index is 0:
+        new_sequence[index], new_sequence[-1] = new_sequence[-1], new_sequence[index]
+    else:
+        new_sequence[index], new_sequence[index - 1] = new_sequence[index - 1], new_sequence[index]
+    return new_sequence
+
+
+def acceptance(new, curr, t):
+    if t is 0:
+        return 0
+    else:
+        return math.exp((curr - new) / t)
