@@ -40,11 +40,12 @@ def total_length(sequence, all_edges):
 def find_neighbour(sequence, all_edges, current_total_distance, list_length):
     index = random.randint(0, len(sequence) - 1)
     new_sequence = copy.deepcopy(sequence)
+    new_total_distance = current_total_distance \
+                         - all_edges[new_sequence[index - 1]][new_sequence[index - 2]] \
+                         - all_edges[new_sequence[index]][new_sequence[(index + 1) % list_length]] \
+                         + all_edges[new_sequence[index]][new_sequence[index - 2]] \
+                         + all_edges[new_sequence[index - 1]][new_sequence[(index + 1) % list_length]]
     new_sequence[index], new_sequence[index - 1] = new_sequence[index - 1], new_sequence[index]
-    new_total_distance = current_total_distance - all_edges[new_sequence[index - 1]][new_sequence[index - 2]] - \
-                         all_edges[new_sequence[index]][new_sequence[(index + 1) % list_length]] + \
-                         all_edges[new_sequence[index]][new_sequence[index - 2]] + all_edges[new_sequence[index - 1]][
-                             new_sequence[(index + 1) % list_length]]
     return new_sequence, new_total_distance
 
 
