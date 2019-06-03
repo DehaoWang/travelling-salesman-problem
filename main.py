@@ -8,6 +8,9 @@ sequence = random.sample(range(0, len(data)), len(data))
 current_total_distance = total_length(sequence, all_edges)
 list_length = len(sequence)
 
+print(f'Initial Sequence: {sequence}')
+print(f'Initial Distance: {current_total_distance}')
+
 for t in range(5000, -1, -1):
     for i in range(10000):
         new_sequence, new_total_distance = find_neighbour(sequence, all_edges, current_total_distance, list_length)
