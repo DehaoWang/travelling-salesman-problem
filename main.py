@@ -6,12 +6,12 @@ data = read_tsp_data.from_file('./data/wi29.txt')
 all_edges = eval_all_edges_length(data)
 sequence = random.sample(range(0, len(data)), len(data))
 current_total_distance = total_length(sequence, all_edges)
+list_length = len(sequence)
 
 for t in range(5000, -1, -1):
     print(f"T: {t}")
     for i in range(10000):
-        new_sequence = permute_two_consecutive(sequence)
-        new_total_distance = total_length(new_sequence, all_edges)
+        new_sequence, new_total_distance = find_neighbour(sequence, all_edges, current_total_distance, list_length)
         if new_total_distance < current_total_distance:
             sequence = new_sequence
             current_total_distance = new_total_distance
@@ -20,7 +20,7 @@ for t in range(5000, -1, -1):
             current_total_distance = new_total_distance
     print(f'Best Sequence So Far: {sequence}')
     print(f'Shortest Distance So Far: {current_total_distance}')
-    if t % 1000 is 0:
+    if t % 500 is 0:
         plot_graph(data, sequence)
 
 # T: 0
