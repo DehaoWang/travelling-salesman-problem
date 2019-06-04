@@ -36,6 +36,18 @@ def find_neighbour(sequence, all_edges, current_total_distance, list_length):
     return new_sequence, new_total_distance
 
 
+def plot_graph(data, sequence, plt, camera):
+    data_x = [_.x for _ in data]
+    data_y = [_.y for _ in data]
+    plt.scatter(data_x, data_y, c='#ff0000')
+    for i, num in enumerate(sequence):
+        if i is 0:
+            plt.plot([data[sequence[0]].x, data[sequence[-1]].x], [data[sequence[0]].y, data[sequence[-1]].y])
+        else:
+            plt.plot([data[num].x, data[sequence[i - 1]].x], [data[num].y, data[sequence[i - 1]].y])
+    camera.snap()
+
+
 def acceptance(new, curr, t):
     if t is 0:
         return 0

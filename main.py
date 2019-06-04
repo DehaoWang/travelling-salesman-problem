@@ -6,29 +6,15 @@ from celluloid import Camera
 
 fig = plt.figure()
 camera = Camera(fig)
-data = read_tsp_data.from_file('./data/qa194.txt')
+data = read_tsp_data.from_file('./data/wi29.txt')
 all_edges = eval_all_edges_length(data)
 sequence = random.sample(range(0, len(data)), len(data))
 current_total_distance = total_length(sequence, all_edges)
 list_length = len(sequence)
 
-
-def plot_graph():
-    global data, sequence, camera
-    data_x = [_.x for _ in data]
-    data_y = [_.y for _ in data]
-    plt.scatter(data_x, data_y, c='#ff0000')
-    for i, num in enumerate(sequence):
-        if i is 0:
-            plt.plot([data[sequence[0]].x, data[sequence[-1]].x], [data[sequence[0]].y, data[sequence[-1]].y])
-        else:
-            plt.plot([data[num].x, data[sequence[i - 1]].x], [data[num].y, data[sequence[i - 1]].y])
-    camera.snap()
-
-
 print(f'Initial Sequence: {sequence}')
 print(f'Initial Distance: {current_total_distance}')
-plot_graph()
+plot_graph(data, sequence, plt, camera)
 
 for t in range(5000, -1, -1):
     for i in range(10000):
@@ -43,10 +29,10 @@ for t in range(5000, -1, -1):
         print(f"T: {t}")
         print(f'Best Sequence So Far: {sequence}')
         print(f'Shortest Distance So Far: {current_total_distance}')
-        plot_graph()
+        plot_graph(data, sequence, plt, camera)
 
 animation = camera.animate()
-animation.save('qa194.mp4')
+animation.save('wi29.mp4')
 
 # Western Sahara - wi29.txt
 # Best Sequence So Far:
