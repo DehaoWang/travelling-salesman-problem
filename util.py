@@ -19,26 +19,15 @@ def eval_all_edges_length(data):
 def total_length(sequence, all_edges):
     total = 0
     for i, num in enumerate(sequence):
-        if i is 0:
-            total += all_edges[num][sequence[-1]]
-        else:
-            total += all_edges[num][sequence[i - 1]]
+        total += all_edges[num][sequence[i - 1]]
     return total
 
 
-def find_neighbour(sequence, all_edges, current_total_distance, list_length):
-    index1, index2 = random.sample(sequence, k=2)
+def find_neighbour(sequence, all_edges):
+    [index1, index2] = random.sample(sequence, k=2)
     new_sequence = copy.deepcopy(sequence)
-    new_total_distance = current_total_distance \
-                         - all_edges[new_sequence[index1]][new_sequence[index1 - 1]] \
-                         - all_edges[new_sequence[index1]][new_sequence[(index1 + 1) % list_length]] \
-                         - all_edges[new_sequence[index2]][new_sequence[index2 - 1]] \
-                         - all_edges[new_sequence[index2]][new_sequence[(index2 + 1) % list_length]] \
-                         + all_edges[new_sequence[index1]][new_sequence[index2 - 1]] \
-                         + all_edges[new_sequence[index1]][new_sequence[(index2 + 1) % list_length]] \
-                         + all_edges[new_sequence[index2]][new_sequence[index1 - 1]] \
-                         + all_edges[new_sequence[index2]][new_sequence[(index1 + 1) % list_length]]
     new_sequence[index1], new_sequence[index2] = new_sequence[index2], new_sequence[index1]
+    new_total_distance = total_length(new_sequence, all_edges)
     return new_sequence, new_total_distance
 
 

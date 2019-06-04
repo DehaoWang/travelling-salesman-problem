@@ -18,7 +18,7 @@ plot_graph(data, sequence, plt, camera)
 
 for t in range(5000, -1, -1):
     for i in range(10000):
-        new_sequence, new_total_distance = find_neighbour(sequence, all_edges, current_total_distance, list_length)
+        new_sequence, new_total_distance = find_neighbour(sequence, all_edges)
         if new_total_distance < current_total_distance:
             # always accept move when new distance is shorter
             sequence = new_sequence
