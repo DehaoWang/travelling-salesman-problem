@@ -12,7 +12,7 @@ def eval_all_edges_length(data):
     for i, first in enumerate(data):
         all_edges.append([])
         for j, second in enumerate(data):
-            all_edges[i].append(dist(first, second))
+            all_edges[i].append(int(dist(first, second)))  # converting to integer
     return all_edges
 
 
@@ -24,7 +24,9 @@ def total_length(sequence, all_edges):
 
 
 def find_neighbour(sequence, all_edges):
-    [index1, index2] = random.sample(sequence, k=2)
+    [item1, item2] = random.sample(sequence, k=2)
+    index1 = sequence.index(item1)
+    index2 = sequence.index(item2)
     new_sequence = copy.deepcopy(sequence)
     new_sequence[index1], new_sequence[index2] = new_sequence[index2], new_sequence[index1]
     new_total_distance = total_length(new_sequence, all_edges)
