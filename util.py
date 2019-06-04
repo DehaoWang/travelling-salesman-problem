@@ -1,4 +1,6 @@
-import math, random, copy
+import math
+import random
+import copy
 
 
 def dist(pos1, pos2):
