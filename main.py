@@ -20,11 +20,14 @@ for t in range(5000, -1, -1):
     for i in range(10000):
         new_sequence, new_total_distance = find_neighbour(sequence, all_edges, current_total_distance, list_length)
         if new_total_distance < current_total_distance:
+            # always accept move when new distance is shorter
             sequence = new_sequence
             current_total_distance = new_total_distance
         elif acceptance(new_total_distance, current_total_distance, t) > random.uniform(0, 1):
+            # accept move by chance based on acceptance probability e^(delta E / T) where delta E is non-positive
             sequence = new_sequence
             current_total_distance = new_total_distance
+    # print data to console and plot graph by step of 100
     if t % 100 is 0:
         print(f"T: {t}")
         print(f'Best Sequence So Far: {sequence}')
