@@ -13,6 +13,6 @@ Optimal Tour: 6656
 
 Qatar - qa194.txt
 Best Sequence So Far:
-
-Shortest Distance So Far:
+None
+Shortest Distance So Far: None
 Optimal Tour: 9352

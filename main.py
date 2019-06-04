@@ -6,7 +6,7 @@ from celluloid import Camera
 
 fig = plt.figure()
 camera = Camera(fig)
-data = read_tsp_data.from_file('./data/wi29.txt') # change file name here
+data = read_tsp_data.from_file('./data/wi29.txt')  # change file name here
 all_edges = eval_all_edges_length(data)
 sequence = random.sample(range(0, len(data)), len(data))
 current_total_distance = total_length(sequence, all_edges)
@@ -32,4 +32,4 @@ for t in range(5000, -1, -1):
         plot_graph(data, sequence, plt, camera)
 
 animation = camera.animate()
-animation.save('wi29.mp4') # change output video name here
+animation.save('wi29.mp4')  # change output video name here
