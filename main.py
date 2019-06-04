@@ -10,6 +10,7 @@ list_length = len(sequence)
 
 print(f'Initial Sequence: {sequence}')
 print(f'Initial Distance: {current_total_distance}')
+plot_graph(data, sequence)
 
 for t in range(5000, -1, -1):
     for i in range(10000):
