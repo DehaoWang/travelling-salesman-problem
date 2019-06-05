@@ -19,7 +19,7 @@ The program reads and convert real-world location data from the TSP data taken f
 
 The main point of entrance is **main.py**, and **read_tsp_data.py** helps read the data. **util.py** is a collection of the utility functions used in the program.
 
-The simulation gradually runs from **T = 5000** to **T = 0** with steps of 1. At each temperature, **10,000 epochs** are run.
+The simulation gradually runs from **T = 5000** to **T = 0** with steps of 1. At each temperature, **10,000 epochs** (depending on the data set size) are run.
 
 - Some of the best output results are manually stored in results.txt, and the indexes of cities in the sequence are also 0-based (add 1 to get back their corresponding number in the original TSP data).
 
