@@ -10,7 +10,7 @@ The optimal results found here might have some difference from the suggested opt
 
 You can double check the path in the animation against the optimal tour path shown on the website.
 
-### wi29 (Western Sahara)
+### wi29 (Western Sahara) (Optimal)
 Below is the animation for the optimal solution found for the data set [**wi29**](http://www.math.uwaterloo.ca/tsp/world/wi29.tsp) (based on real world location data of **29 cities** in **Western Sahara**):
 
 ![Western Sahara(optimal)](wi29(27748).gif)
@@ -19,7 +19,7 @@ Below is the animation for the optimal solution found for the data set [**wi29**
 
 The optimal distance found is **27748.70957813486** (compared to [suggested optimal solution of 27603](http://www.math.uwaterloo.ca/tsp/world/witour.html)).
 
-### dj38 (Djibouti)
+### dj38 (Djibouti) (Optimal)
 Below is the animation for the optimal solution found for the data set [**dj38**](http://www.math.uwaterloo.ca/tsp/world/dj38.tsp) (based on real world location data of **38 cities** in **Djibouti**, a country in East Africa):
 
 ![Djibouti(optimal)](dj38(6659).gif)
@@ -28,7 +28,7 @@ Below is the animation for the optimal solution found for the data set [**dj38**
 
 The optimal distance found is **6659.431532931465** (compared to [suggested optimal solution of 6656](http://www.math.uwaterloo.ca/tsp/world/djtour.html)).
 
-### dj38 (Djibouti) - sub-optimal result
+### dj38 (Djibouti) (Sub-optimal)
 Since Simulated Annealing is a probabilistic approach, there is times that you can only find an almost-optimal (sub-optimal) solution.
 
 Here's an example:
