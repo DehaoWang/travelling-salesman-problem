@@ -15,7 +15,7 @@ Below is the animation for the optimal solution found for the data set [**wi29**
 
 ![Western Sahara(optimal)](wi29(27748).gif)
 
-(Initial temperature = 5000, epochs = 1000)
+*(Initial temperature = 5000, epochs = 1000)*
 
 The optimal distance found is **27748.70957813486** (compared to [suggested optimal solution of 27603](http://www.math.uwaterloo.ca/tsp/world/witour.html)).
 
@@ -24,7 +24,7 @@ Below is the animation for the optimal solution found for the data set [**dj38**
 
 ![Djibouti(optimal)](dj38(6659).gif)
 
-(Initial temperature = 5000, epochs = 1000)
+*(Initial temperature = 5000, epochs = 1000)*
 
 The optimal distance found is **6659.431532931465** (compared to [suggested optimal solution of 6656](http://www.math.uwaterloo.ca/tsp/world/djtour.html)).
 
@@ -35,7 +35,7 @@ Here's an example:
 
 ![Djibouti](dj38(6911).gif)
 
-(Initial temperature = 5000, epochs = 10000)
+*(Initial temperature = 5000, epochs = 10000)*
 
 The above sub-optimal solution has total distance of **6911** (about **1%** away from optimal solution).
 
