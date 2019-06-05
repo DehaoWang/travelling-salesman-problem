@@ -12,7 +12,7 @@ def eval_all_edges_length(data):
     for i, first in enumerate(data):
         all_edges.append([])
         for j, second in enumerate(data):
-            all_edges[i].append(int(dist(first, second)))  # converting to integer
+            all_edges[i].append(dist(first, second))
     return all_edges
 
 
