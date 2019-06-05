@@ -1,13 +1,37 @@
 # Travelling Salesman Problem
 This project aims at obtaining sub-optimal solutions to the famous [Travelling Salesman Problem (TSP)](https://en.wikipedia.org/wiki/Travelling_salesman_problem) (assuming distances satisfy triangle inequality) with one of the [Monte Carlo methods](https://en.wikipedia.org/wiki/Monte_Carlo_method) called [Simulated Annealing](https://en.wikipedia.org/wiki/Simulated_annealing).
 
-Below is an animation generated from one of the simulations (data based on real world location data of **38 cities** in **Djibouti**, a country in East Africa):
+## Results
+The solutions found for the different data sets are show below (updated whenever new results come out).
+
+You can also find the [suggested optimal tours](http://www.math.uwaterloo.ca/tsp/world/countries.html#WI) for different data sets in the link.
+
+The optimal results found here might have some difference from the suggested optimal tour on the website. The reason is being the round off errors in the distance formula.
+
+You can double check the path in the animation against the optimal tour path shown on the website.
+
+### wi29 (Western Sahara)
+Below is the animation for the optimal solution found for the data set [**wi29**](http://www.math.uwaterloo.ca/tsp/world/wi29.tsp) (based on real world location data of **29 cities** in **Western Sahara**):
+
+![Western Sahara(optimal)](wi29(27748).gif)
+
+The optimal distance found is **27748.70957813486** (compared to [suggested optimal solution of 27603](http://www.math.uwaterloo.ca/tsp/world/witour.html)).
+
+### dj38 (Djibouti)
+Below is the animation for the optimal solution found for the data set [**dj38**](http://www.math.uwaterloo.ca/tsp/world/dj38.tsp) (based on real world location data of **38 cities** in **Djibouti**, a country in East Africa):
+
+![Djibouti(optimal)](dj38(6659).gif)
+
+The optimal distance found is **6659.431532931465** (compared to [suggested optimal solution of 6656](http://www.math.uwaterloo.ca/tsp/world/djtour.html)).
+
+### dj38 (Djibouti) - sub-optimal result
+Since Simulated Annealing is a probabilistic approach, there is times that you can only find an almost-optimal (sub-optimal) solution.
+
+Here's an example:
 
 ![Djibouti](dj38(6911).gif)
 
-The above simulation is a sub-optimal solution of the problem with total distance of **6911** (about **1%** away from optimal solution).
-
-You can check out the suggested optimal solution [here](http://www.math.uwaterloo.ca/tsp/world/djtour.html) which has a total distance of **6656**.
+The above sub-optimal solution has total distance of **6911** (about **1%** away from optimal solution).
 
 ## Data used in this program
 All data sets are taken from the [TSP website of Math Department in University of Waterloo](http://www.math.uwaterloo.ca/tsp/world/countries.html#DJ).
