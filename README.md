@@ -1,5 +1,5 @@
 # Travelling Salesman Problem
-This project aims at obtaining sub-optimal solutions to the famous [Travelling Salesman Problem (TSP)](https://en.wikipedia.org/wiki/Travelling_salesman_problem) (assuming distances satisfy triangle inequality) with one of the [Monte Carlo methods](https://en.wikipedia.org/wiki/Monte_Carlo_method) called [Simulated Annealing](https://en.wikipedia.org/wiki/Simulated_annealing).
+This project aims at obtaining solutions to the famous [Travelling Salesman Problem (TSP)](https://en.wikipedia.org/wiki/Travelling_salesman_problem) (assuming distances satisfy triangle inequality) with one of the [Monte Carlo methods](https://en.wikipedia.org/wiki/Monte_Carlo_method) called [Simulated Annealing](https://en.wikipedia.org/wiki/Simulated_annealing).
 
 ## Results
 The solutions found for the different data sets are show below (updated whenever new results come out).
