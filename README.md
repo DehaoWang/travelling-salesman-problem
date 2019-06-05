@@ -14,6 +14,7 @@ You can double check the path in the animation against the optimal tour path sho
 Below is the animation for the optimal solution found for the data set [**wi29**](http://www.math.uwaterloo.ca/tsp/world/wi29.tsp) (based on real world location data of **29 cities** in **Western Sahara**):
 
 ![Western Sahara(optimal)](wi29(27748).gif)
+(Initial temperature = 5000, epochs = 1000)
 
 The optimal distance found is **27748.70957813486** (compared to [suggested optimal solution of 27603](http://www.math.uwaterloo.ca/tsp/world/witour.html)).
 
@@ -21,6 +22,7 @@ The optimal distance found is **27748.70957813486** (compared to [suggested opti
 Below is the animation for the optimal solution found for the data set [**dj38**](http://www.math.uwaterloo.ca/tsp/world/dj38.tsp) (based on real world location data of **38 cities** in **Djibouti**, a country in East Africa):
 
 ![Djibouti(optimal)](dj38(6659).gif)
+(Initial temperature = 5000, epochs = 1000)
 
 The optimal distance found is **6659.431532931465** (compared to [suggested optimal solution of 6656](http://www.math.uwaterloo.ca/tsp/world/djtour.html)).
 
@@ -30,6 +32,7 @@ Since Simulated Annealing is a probabilistic approach, there is times that you c
 Here's an example:
 
 ![Djibouti](dj38(6911).gif)
+(Initial temperature = 5000, epochs = 10000)
 
 The above sub-optimal solution has total distance of **6911** (about **1%** away from optimal solution).
 
@@ -43,7 +46,7 @@ The program reads and convert real-world location data from the TSP data taken f
 
 The main point of entrance is **main.py**, and **read_tsp_data.py** helps read the data. **util.py** is a collection of the utility functions used in the program.
 
-The simulation gradually runs from **T = 5000** to **T = 0** with steps of 1. At each temperature, **10,000 epochs** (depending on the data set size) are run.
+The simulation gradually runs from **T = 5000** (or other initial temperature) to **T = 0** with steps of 1. At each temperature, **10,000 epochs** (depending on the data set size) are run.
 
 - Some of the best output results are manually stored in results.txt, and the indexes of cities in the sequence are also 0-based (add 1 to get back their corresponding number in the original TSP data).
 
