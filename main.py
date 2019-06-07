@@ -12,8 +12,8 @@ sequence = random.sample(range(0, len(data)), len(data))
 current_total_distance = total_length(sequence, all_edges)
 list_length = len(sequence)
 
-for t in range(100, -1, -1):
-    for i in range(1000):
+for t in range(200, -1, -1):
+    for i in range(10000):
         new_sequence, new_total_distance = find_neighbour(sequence, all_edges)
         if new_total_distance < current_total_distance:
             # always accept move when new distance is shorter
