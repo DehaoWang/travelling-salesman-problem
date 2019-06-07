@@ -12,8 +12,8 @@ sequence = random.sample(range(0, len(data)), len(data))
 current_total_distance = total_length(sequence, all_edges)
 list_length = len(sequence)
 
-for t in range(200, -1, -1):
-    for i in range(10000):
+for t in range(5000, -1, -1):
+    for i in range(1000):
         new_sequence, new_total_distance = find_neighbour(sequence, all_edges)
         if new_total_distance < current_total_distance:
             # always accept move when new distance is shorter
@@ -24,7 +24,7 @@ for t in range(200, -1, -1):
             sequence = new_sequence
             current_total_distance = new_total_distance
     # print data to console and plot graph by step of 100
-    if t % 10 is 0:
+    if t % 100 is 0:
         print(f"T: {t}")
         print(f'Best Sequence So Far: {sequence}')
         print(f'Shortest Distance So Far: {current_total_distance}')
